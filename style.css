@@ -39,10 +39,36 @@ footer {
     width: 100%;
 }
 
-.main {
-    display: gird;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
+.modal {
+    width: 20rem;
 }
 
+.modal-content h2 {
+    text-align: center;
+    padding: 1rem;
+}
 
+.modal-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 0.5rem;
+} 
+
+.modal-form label {
+    grid-column: 1 / 2;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    
+}   
+
+.modal-form input {
+    grid-column: 2 / 3;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #404040;
+    border-radius: 0.5rem;
+}
+
+.modal-form #submit {
+    grid-column: span 2;
+}
