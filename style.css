@@ -18,6 +18,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 header .button {
@@ -46,6 +47,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 0.5rem;
+    border-color: #404040;
 }
 
 .modal::backdrop {
@@ -79,4 +81,58 @@ footer {
 
 .modal-form #submit {
     grid-column: span 2;
+    background-color: #404040;
+    color: #fff;
+}
+
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    
+}
+
+.book-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+    max-width: 20rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    margin: 1rem;
+    overflow: hidden;
+}
+
+.book-card h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.book-card h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.book-card button {
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;;
+    background-color: #404040;
+    color: #fff;
+    width: 100%;
+}
+
+.book-card img {
+
+    grid-row: 1 / 6;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
 }
