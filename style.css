@@ -1,17 +1,28 @@
+/* Define color variables */
+:root {
+    --primary-bg-color: #eaeaea;
+    --secondary-bg-color: #fff;
+    --text-color: #404040;
+    --accent-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Reset default margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Global styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #eaeaea;
+    background-color: var(--primary-bg-color);
     height: 100vh;
 }
 
+/* Header styles */
 header {
-    background-color: #fff;
+    background-color: var(--secondary-bg-color);
     font-size: 1.25rem;
     font-weight: 600;
     display: flex;
@@ -25,11 +36,12 @@ header .button {
     border: none;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;;
-    background-color: #404040;
+    border-radius: 0.5rem;
+    background-color: var(--text-color);
     color: #fff;
 }
 
+/* Footer styles */
 footer {
     display: flex;
     justify-content: center;
@@ -40,6 +52,7 @@ footer {
     width: 100%;
 }
 
+/* Modal styles */
 .modal {
     width: 20rem;
     position: absolute;
@@ -47,11 +60,11 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 0.5rem;
-    border-color: #404040;
+    border-color: var(--text-color);
 }
 
 .modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--accent-color);
 }
 
 .modal-content h2 {
@@ -63,36 +76,38 @@ footer {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 0.5rem;
-} 
+}
+
+.modal-form label,
+.modal-form input {
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
 
 .modal-form label {
     grid-column: 1 / 2;
-    margin: 0.5rem;
-    padding: 0.5rem;
-}   
+}
 
 .modal-form input {
     grid-column: 2 / 3;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid #404040;
+    border: 1px solid var(--text-color);
     border-radius: 0.5rem;
 }
 
 .modal-form #submit {
     grid-column: span 2;
-    background-color: #404040;
+    background-color: var(--text-color);
     color: #fff;
 }
 
-
+/* Main content styles */
 .main {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem;
-    
 }
 
+/* Book card styles */
 .book-card {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -100,7 +115,7 @@ footer {
     gap: 1rem;
     max-width: 20rem;
     text-align: center;
-    background-color: #fff;
+    background-color: var(--secondary-bg-color);
     border-radius: 0.5rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     padding: 1rem;
@@ -122,17 +137,15 @@ footer {
     border: none;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;;
-    background-color: #404040;
+    border-radius: 0.5rem;
+    background-color: var(--text-color);
     color: #fff;
     width: 100%;
 }
 
 .book-card img {
-
     grid-row: 1 / 6;
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
