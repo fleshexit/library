@@ -7,6 +7,8 @@ openModal.addEventListener("click", () => {
     modal.showModal();
 });
 
+// Library
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -16,4 +18,46 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
+}
+
+const submit = document.querySelector("#submit");
+submit.addEventListener("click", () => {
+    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector("#pages").value;
+    const read = document.querySelector("#read").value;
+    const book = new Book(title, author, pages, read);
+    addBookToLibrary(book);
+    addLibraryToPage();
+    modal.close();
+});
+
+function addLibraryToPage() {
+  const library = document.querySelector(".main");
+  library.innerHTML = "";
+  myLibrary.forEach((book) => {
+    const bookCard = document.createElement("div");
+    bookCard.classList.add("book-card");
+    const title = document.createElement("h2");
+    title.textContent = book.title;
+    const author = document.createElement("h3");
+    author.textContent = book.author;
+    const pages = document.createElement("h3");
+    pages.textContent = book.pages;
+    const read = document.createElement("h3");
+    read.textContent = book.read;
+    const remove = document.createElement("button");
+    remove.classList.add("remove");
+    remove.textContent = "Remove";
+    remove.addEventListener("click", () => {
+      myLibrary.splice(myLibrary.indexOf(book), 1);
+      addLibraryToPage();
+    });
+    bookCard.appendChild(title);
+    bookCard.appendChild(author);
+    bookCard.appendChild(pages);
+    bookCard.appendChild(read);
+    bookCard.appendChild(remove);
+    library.appendChild(bookCard);
+  });
 }
