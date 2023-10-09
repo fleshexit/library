@@ -48,6 +48,7 @@ function addLibraryToPage() {
 
         const img = document.createElement("img");
         img.src = "./images/bookshelf.jpg";
+        img.alt = "bookshelf";
 
         const title = document.createElement("h2");
         title.textContent = '"' + book.title + '"';
